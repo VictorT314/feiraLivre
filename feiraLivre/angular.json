@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "feiraLivre"
+  "defaultProject": "feiraLivre",
+  "cli": {
+    "analytics": "8a205aeb-b446-482f-b88c-1839001323d3"
+  }
 }
