@@ -24,7 +24,25 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Fale Conosco</a>
         </li>
-        
+
+        <div *ngIf='auth.btnLogin()'>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/login'>Login</a>
+          </li>
+        </div>
+
+        <div *ngIf='auth.btnLogin()'>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/cadastro'>Cadastrar</a>
+          </li>
+        </div>
+
+        <div *ngIf='auth.btnSair()'> 
+          <li class="nav-item">
+            <a class="nav-link" (click)='sair()'>Sair</a>
+          </li>
+
+        </div>     
       </ul>
     </div>
   </nav>
