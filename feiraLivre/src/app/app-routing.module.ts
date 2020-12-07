@@ -1,14 +1,14 @@
-import { HomeComponent } from './home/home.component';
-import { NgModule, Component } from '@angular/core';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
-
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'sobre-nos', component: SobreNosComponent}
+  {path:'', pathMatch: 'full', redirectTo:'home'},
+  {path:'home', component: HomeComponent},
+  {path:'sobre-nos', component: SobreNosComponent},
+  {path:'cadastro', component: CadastroComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
