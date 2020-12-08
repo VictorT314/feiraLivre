@@ -1,39 +1,120 @@
-<div class="container-fluid">
-<hr>
+<div class="container-fluid " id="bgfooter">
+  <hr>
+  <div class="row ml-0 mr-0 mb-3">
+    <!--começo texto resumido sobre nós-->
 
-    <div class="row ml-3 mr-3 mb-3">
-        <div class="col-md-4 mb-3">
-            <h5 class="text-center mb-3">Sobre nós</h5>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam fuga doloribus possimus tenetur aliquam minima sequi perferendis eaque, nesciunt aut. Praesentium ad odio similique cum ducimus consequuntur officiis quasi!</p>
+    <div class="col-md-4 mb-3">
+      <div class="row ml-3 mr-3 mb-3 ">
+        <div class="col-md-4 p-0 ">
+          <img class="ml-0" src="https://i.imgur.com/4RLyjZg.png" alt="Feira Livre" width="115px" height="75px" alt="">
         </div>
-        <div class="col-md-4 mb-3">
-            <h5 class="text-center d-flex justify-content-center mb-3">Entre em contato</h5>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis explicabo dicta sint soluta quia vitae fuga quidem, voluptate ratione laboriosam suscipit animi repellendus expedita. Perspiciatis modi blanditiis minus esse optio?</p>
-            <button type="button" class="btn btn-outline-success justify-content-end">Fale conosco!</button>
+        <div class="col-md-4 p-0 pt-2 mt-4  sobrenos">
+          <h4>Sobre Nós</h4>
         </div>
-        <div class="col-md-4">
-            <h5 class="text-center mb-3">Seja um parceiro</h5>
-            <form>
+      </div>
+      <p class="text-justify mt-4 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam
+        fuga
+        doloribus possimus tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam fuga
+        doloribus possimus tenetur!</p>
+    </div>
+    <!-- final texto resumido sobre nós-->
+    <!-- começo texto resumido entre em contato-->
+    <div class="col-md-4 justify-content-center pl-5 ">
+
+      <div class="col-md-10 mb-0 media mt-3">
+        <fa-icon [icon]="faMapMarkerAlt" class="align-self-center fa-1x pl-4"></fa-icon>
+        <div class="media-body">
+          <h6 class="mt-4 ml-4 text-sm-left mb-0">Endereço</h6>
+          <p class="ml-4 text-sm-left mb-0 mt-0">Rua testando teste, 30 - São Paulo - SP</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-0 media mt-0 ">
+        <fa-icon [icon]="faPhoneAlt" class="align-self-center fa-1x pl-4"></fa-icon>
+        <div class="media-body">
+          <h6 class="mt-4 ml-3 text-sm-left mb-0">Telefone</h6>
+          <p class="ml-3 text-sm-left mb-0 mr-0 ">(11) 4002-8922</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-0 media mb-3">
+        <fa-icon [icon]="faEnvelope" class="align-self-center fa-1x mb-2 pl-4"></fa-icon>
+        <div class="media-body">
+          <h6 class="mt-4 ml-3 text-sm-left mb-0">E-mail</h6>
+          <p class="ml-3 text-sm-left">sac@feiralivre.com.br</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- final texto resumido entre em contato-->
+
+    <!-- começo texto resumido seja parceiro-->
+    <div class="col-md-4 ml-0 pl-0">
+      <h4 class="text-center mb-3 mt-4 pt-2">Seja um parceiro</h4>
+      <p class="text-justify mt-4 pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam
+        fuga
+        doloribus possimus tenetur!</p>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-outline-success justify-content-end" data-toggle="modal"
+          data-target="#siteModal">Contate-nos</button>
+      </div>
+    </div>
+
+    <!-- final texto resumido seja parceiro-->
+
+
+
+
+    <!-- começo modal-->
+    <div class="modal" tabindex="-1" role="dialog" id="siteModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Seja Parceiro</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <h5 class="text-center mb-5"></h5>
+              <form>
                 <div class="form-group">
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu nome">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu e-mail">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu telefone">
-                  </div>
+                  <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Insira seu e-mail">
+                </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Insira uma mensagem aqui"></textarea>
+                  <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Insira seu telefone">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Insira uma mensagem aqui"></textarea>
                 </div>
               </form>
-              <button type="button" class="btn btn-outline-success justify-content-end">Enviar</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success justify-content-end" data-toggle="modal"
+              data-target="#siteModal">Enviar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row text-center color">
-        <div class="col-md-12 mt-4 ">
-            <p class="">2020 &copy; Ceuci S.A. Todos os direitos reservados </p>
-        </div>
+  </div>
+
+  <!-- final modal-->
+
+
+  <!-- Começo Direitos Reservados-->
+
+  <div class="row text-center color">
+    <div class="col-md-12 mt-4 ">
+      <p class="">2020 &copy; Ceuci S.A. Todos os direitos reservados </p>
     </div>
+  </div>
 </div>
 
+<!--Final Direitos Reservados-->
