@@ -45,26 +45,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLink='/cadastro'>Cadastrar</a>
           </li>
-          <li class="">
-            <a class="nav-link " href="#">|</a>
-          </li>
         </div>
         
         <div *ngIf='auth.btnLogin()'>
           <li class="nav-item">
             <a class="nav-link" routerLink='/login'>Login</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link " href="#">|</a>
-          </li>
         </div>
         
         <div *ngIf='auth.btnSair()'> 
           <li class="nav-item">
             <a class="nav-link" (click)='sair()'>Sair</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="#">|</a>
           </li>
           </div>
         <li class="nav-item">
@@ -77,7 +68,3 @@
   </div>
  
 </nav>
-
-
-
-
