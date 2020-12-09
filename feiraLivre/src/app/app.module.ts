@@ -17,7 +17,6 @@ import { LoginComponent } from './login/login.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +31,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
     ProdutosComponent,
 
 
+    
   ],
   imports: [
     BrowserModule,
