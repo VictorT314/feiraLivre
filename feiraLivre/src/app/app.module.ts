@@ -28,7 +28,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
     PoliticasComponent,
     CadastroComponent,
     LoginComponent,
-    ProdutosComponent,
+    ProdutosComponent
 
 
     
