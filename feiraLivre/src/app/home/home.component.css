@@ -1,19 +1,19 @@
-.verdin {
-    color: #c3f584;
+.veg {
+    color: #a6f349;
 }
-.preto {
-    color: black;
-}
-.laranja {
+
+.trator {
     color: #fccb8f;
 }
-.corqueeunaosei {
+
+.pessoas {
     color: #f65c78;
 }
-.br-30 {
-    border-radius: 50%;
+
+.jumbotron {
+    background-color: #f0ffea;
 }
-.border-3 {
-    border-width: 3px;
-    color: green;
+
+.card-footer{
+    background-color: #f0ffea;
 }
