@@ -12,15 +12,16 @@
             </div>
             <div class="form-group">
                 <label for="inputAddress">Telefone</label>
-                <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.telefone'>
+                <input type="text" mask="(99)99999-9999" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.telefone'>
+                
             </div>
             <div class="form-group">
                 <label for="inputAddress">CPF</label>
-                <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.cpf'>
+                <input type="text" mask="000.000.000-00" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.cpf'>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Data de Nascimento</label>
-                <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.dataNascimento'>
+                <input type="text" mask="00/00/0000" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='user.dataNascimento'>
             </div>
             <div class="form-group">
                 <label for="inputEmail">E-mail</label>
