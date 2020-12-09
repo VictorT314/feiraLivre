@@ -15,6 +15,7 @@ import { PoliticasComponent } from './politicas/politicas.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NgxMaskModule } from 'ngx-mask';
     ContatosComponent,
     PoliticasComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    ProdutosComponent
 
   ],
   imports: [
