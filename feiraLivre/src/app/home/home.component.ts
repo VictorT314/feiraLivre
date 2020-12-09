@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSeedling, faTractor, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faSeedling, faTractor, faUsers,faMapMarkerAlt,faPhoneAlt , faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +9,9 @@ import { faSeedling, faTractor, faUsers } from '@fortawesome/free-solid-svg-icon
 })
 export class HomeComponent implements OnInit {
 
+  faEnvelope = faEnvelope
+  faPhoneAlt = faPhoneAlt
+  faMapMarkerAlt = faMapMarkerAlt
   faSeedling = faSeedling
   faTractor = faTractor
   faUsers = faUsers

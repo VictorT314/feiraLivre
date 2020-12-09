@@ -10,10 +10,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { ContatosComponent } from './contatos/contatos.component';
+import { PoliticasComponent } from './politicas/politicas.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
-
 import { NgxMaskModule } from 'ngx-mask';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NgxMaskModule } from 'ngx-mask';
     NavbarComponent,
     FooterComponent,
     SobreNosComponent,
+    ContatosComponent,
+    PoliticasComponent,
     CadastroComponent,
     LoginComponent,
     
