@@ -19,7 +19,6 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +33,8 @@ import { FiltroComponent } from './filtro/filtro.component';
     ProdutosComponent,
     FiltroComponent
 
+
+    
   ],
   imports: [
     BrowserModule,
