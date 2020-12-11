@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,6 @@ import { FiltroComponent } from './filtro/filtro.component';
     LoginComponent,
     ProdutosComponent,
     FiltroComponent
-
-
-    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +40,8 @@ import { FiltroComponent } from './filtro/filtro.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
