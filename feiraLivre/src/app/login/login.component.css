@@ -6,7 +6,7 @@
     display: flex;
     background-image: url("https://i.pinimg.com/originals/ce/7c/4e/ce7c4ec19b614ccde9be9f45aa93035f.gif");
 }
-
+ 
 .box input[type="text"],
 .box input[type="password"] {
     border: 0;
@@ -77,4 +77,8 @@ a:hover {
 
 #fundo{
     background-color: #fbfbf8;
+}
+
+.modal1{
+  width: 500px;
 }

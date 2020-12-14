@@ -19,6 +19,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

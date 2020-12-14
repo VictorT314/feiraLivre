@@ -2,6 +2,7 @@ import { AuthService } from './../service/auth.service';
 import { User } from './../model/User';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
- 
+  model: NgbDateStruct;
+
   user: User = new User()
   senha: string
   

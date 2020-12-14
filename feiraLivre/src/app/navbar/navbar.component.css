@@ -21,3 +21,94 @@ a:hover {
       display: none;
     }
   }
+
+
+
+
+
+
+
+  .card {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 33px 0 rgba(0,0,0,.75);
+    position: relative;
+    display: flex;
+    background-image: url("https://i.pinimg.com/originals/ce/7c/4e/ce7c4ec19b614ccde9be9f45aa93035f.gif");
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #c6edb5;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #2ecc71
+}
+
+
+a {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #57b846;
+}
+
+#fundo{
+    background-color: #fbfbf8;
+}
+
+.modal1{
+  width: 500px;
+}

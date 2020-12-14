@@ -41,4 +41,15 @@ export class AuthService {
     return ok
 
   }
+
+  RemoveNavEFooter(){
+    let ok = false
+    let token = localStorage.getItem('token')
+    
+    if (token == null) {
+      ok = true
+    }
+
+    return ok
+  }
 }
