@@ -7,6 +7,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'feiraLivre';
   faLinkedin = faLinkedin;
 }

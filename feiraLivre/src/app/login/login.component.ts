@@ -8,16 +8,18 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
+  
   }
 
   entrar() {
@@ -27,5 +29,5 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home'])
     })
   }
-   
+
 }
