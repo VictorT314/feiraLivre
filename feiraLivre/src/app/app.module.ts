@@ -33,9 +33,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     ProdutosComponent,
     FiltroComponent
-
-
-    
   ],
   imports: [
     BrowserModule,
