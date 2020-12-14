@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FiltroComponent } from './filtro/filtro.component';
     CadastroComponent,
     LoginComponent,
     ProdutosComponent,
-    FiltroComponent
+    FiltroComponent,
+    CarrinhoComponent
 
 
     
