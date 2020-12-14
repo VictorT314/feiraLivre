@@ -1,3 +1,23 @@
 .color{
     background-color: #c6edb5;
 }
+.submenu{
+    border-radius: 5%;
+
+}
+a:hover {
+    color: rgba(8, 59, 2, 0.596);
+    border-radius: 15%;
+  }
+.menu{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 16px;
+}
+.menu a:hover{
+    color: green;
+}
+@media screen and (max-width: 990px) {
+    .tirar {
+      display: none;
+    }
+  }
