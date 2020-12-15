@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { UserLogin } from '../model/UserLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { User } from './../model/User';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -17,6 +19,11 @@ export class NavbarComponent implements OnInit {
   
   userLogin: UserLogin = new UserLogin()
  
+
+  model: NgbDateStruct;
+
+  user: User = new User()
+  senha: string
 
   constructor(
     private router: Router,
@@ -48,4 +55,23 @@ export class NavbarComponent implements OnInit {
     jQuery('#modalLogin').modal('hide');
     this.router.navigate(['/cadastro'])
   }
+
+  cadastrar(){
+    if (this.senha === this.user.senha) {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
+        this.router.navigate(['/login'])
+        alert('Usuário cadastrado com sucesso')
+      })
+
+    } else {
+      alert('Suas Senhas Não Conferem')
+    }
+   
+  }
+
+  conferirSenha(event:any){
+    this.senha = event.target.value
+  }
+
 }
