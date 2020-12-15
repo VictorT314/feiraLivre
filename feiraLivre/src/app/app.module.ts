@@ -18,6 +18,7 @@ import { PoliticasComponent } from './politicas/politicas.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertasComponent } from './alertas/alertas.component';
 
@@ -32,6 +33,7 @@ import { AlertasComponent } from './alertas/alertas.component';
     PoliticasComponent,
     ProdutosComponent,
     FiltroComponent,
+    CarrinhoComponent,
     AlertasComponent
   ],
   imports: [
