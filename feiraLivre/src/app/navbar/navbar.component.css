@@ -84,7 +84,6 @@ a:hover {
     background: #2ecc71
 }
 
-
 a {
 	font-size: 14px;
 	line-height: 1.7;
@@ -94,6 +93,7 @@ a {
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
+  cursor: pointer;
 }
 
 a:focus {
