@@ -48,11 +48,47 @@
     </ul>
     <div class="ml-auto">
       <ul class="navbar-nav ">
+        <!--Começo Cadastro texto-->
         <div *ngIf='auth.btnLogin()'>
           <li class="nav-item menu">
-            <a class="nav-link" routerLink='/cadastro'>Cadastrar</a>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modalCadastro">Cadastrar</a>
           </li>
         </div>
+        <!-- final Cadastro texto-->
+
+
+
+        <!-- começo modal Cadastro-->
+
+        <div class="modal" tabindex="-1" role="dialog" id="modalCadastro">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+              <!--começo Cadastro-->
+
+              <div class="card cadastroo rounded">
+                <!-- começo X pra fechamento cadastro-->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <!-- fim X pra fechamento cadastro-->
+
+
+                <div class="row d-flex justify-content-center ">
+                  <div class="">
+                    <p><img src="https://i.imgur.com/Epr5gux.png" alt=""></p>
+                  </div>
+                </div>
+
+                <div class="row mt-5">
+
+                  <div class="col-md-12  d-flex justify-content-center">
+                    <h3>Cadastrar</h3>
+                  </div>
+                </div>
 
 
 
@@ -60,9 +96,68 @@
 
 
 
+                <div class="row mb-5 d-flex justify-content-center">
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <div class="pl-3 pr-3">
+
+                      <div class="form-group boxCadastro">
+                        <label for="inputAddress"></label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome"
+                          [(ngModel)]='user.nome'>
+                      </div>
+                      <div class="form-group boxCadastro">
+                        <label for="inputAddress"></label>
+                        <input type="text" class="form-control" id="telefone"
+                          placeholder="Digite o seu telefone com DDD" mask="(00) 0000-0000" [(ngModel)]='user.telefone'>
+                      </div>
+                      <div class="form-group boxCadastro">
+                        <label for="inputAddress"></label>
+                        <input type="text" class="form-control" id="cpf" placeholder="Digite o seu CPF, sem pontos"
+                          mask="000.000.000-00" [(ngModel)]='user.cpf'>
+                      </div>
+                      <div class="form-group boxCadastro">
+                        <label for="inputAddress"></label>
+                        <input type="text" class="form-control" id="data" placeholder="Digite sua data de nascimento"
+                          mask="00/00/0000" [(ngModel)]='user.dataNascimento' placement="top"
+                          ngbTooltip="Digite no seguinte formato: 01/10/2000">
+                      </div>
+
+                      <div class="form-group boxCadastro">
+                        <label for="inputEmail"></label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail"
+                          [(ngModel)]='user.email'>
+                      </div>
+                      <div class="form-group boxCadastro">
+                        <label for="inputPassword"></label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Senha"
+                          (input)='conferirSenha($event)' value='{{senha}}' placement="top"
+                          ngbTooltip="Escolha uma senha forte, com letras maiuculas, minusculas e caracteres especiais (@,#,%,/,\)">
+
+                      </div>
+                      <div class="form-group boxCadastro">
+                        <label for="inputPassword"></label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Confirmar senha"
+                          [(ngModel)]='user.senha'>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-success" (click)='cadastrarCad()'>Cadastrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
+              </div>
+
+              <!--Final cadastro-->
+            </div>
+          </div>
+        </div>
+
+        <!-- final modal cadastro-->
         
+
+        <!-- login texto-->
         <li class="nav-item tirar">
           <a class="nav-link  ">|</a>
         </li>
@@ -71,8 +166,9 @@
             <a href="#" class="nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
           </li>
         </div>
+        <!-- final login texto-->
 
-        <!-- começo modal-->
+        <!-- começo modal Login-->
 
         <div class="modal" tabindex="-1" role="dialog" id="modalLogin">
           <div class="modal-dialog" role="document">
@@ -82,13 +178,13 @@
               <!--começo Login-->
 
               <div class="card rounded">
-                <!-- começo X pra fechamento-->
+                <!-- começo X pra fechamento login-->
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <!-- fim X pra fechamento-->
+                <!-- fim X pra fechamento login-->
 
 
                 <div class="row d-flex justify-content-center ">
@@ -116,7 +212,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha"
                           [(ngModel)]='userLogin.senha'>
                         <a class="" href="#">Esqueceu a senha?</a> <br>
-                        <a class="" routerLink="cadastro">Cadastre-se</a>
+                        <a class="  " href="#" data-toggle="modal" data-target="#modalCadastro" (click)='cadastrar()'>Cadastre-se</a>
                       </div>
                       <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-success w-28 " (click)='entrar()'>Entrar</button>
@@ -131,34 +227,23 @@
           </div>
         </div>
 
-        <!-- final modal-->
+        <!-- final modal login-->
 
+        <div *ngIf='auth.btnSair()'>
+          <li class="nav-item fontSair">
+            <a class="nav-link" (click)='sair()'>Sair</a>
+          </li>
+        </div>
         <li class="nav-item tirar ">
           <a class="nav-link ">|</a>
         </li>
 
-        <div *ngIf='auth.btnSair()'>
-          <li class="nav-item">
-            <a class="nav-link" (click)='sair()'>Sair</a>
-          </li>
-        </div>
         <li class="nav-item">
           <a class="nav-link p-1 ml-1" routerLink='/carrinho'><img src="https://www.flaticon.com/svg/static/icons/svg/679/679814.svg" width="30px"
               height="30px" alt="carrinho"> </a>
         </li>
-
       </ul>
     </div>
-
-
-
-
-
-
-
-
-
-
 
   </div>
 
