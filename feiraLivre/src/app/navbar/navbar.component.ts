@@ -13,9 +13,7 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent implements OnInit {
   
   userLogin: UserLogin = new UserLogin()
-
   model: NgbDateStruct;
-
   user: User = new User()
   senha: string
 
