@@ -116,7 +116,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha"
                           [(ngModel)]='userLogin.senha'>
                         <a class="" href="#">Esqueceu a senha?</a> <br>
-                        <a class="" routerLink="cadastro">Cadastre-se</a>
+                        <a class="a" (click)='cadastrar()'>Cadastre-se</a>
                       </div>
                       <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-success w-28 " (click)='entrar()'>Entrar</button>

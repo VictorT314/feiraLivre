@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CadastroComponent,
     LoginComponent,
     ProdutosComponent,
-    FiltroComponent
+    FiltroComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
-    NgbModule
+    NgbModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
