@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,12 +15,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatosComponent } from './contatos/contatos.component';
 import { PoliticasComponent } from './politicas/politicas.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { LoginComponent } from './login/login.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SobreNosComponent,
     ContatosComponent,
     PoliticasComponent,
-    CadastroComponent,
-    LoginComponent,
     ProdutosComponent,
-    FiltroComponent
+    FiltroComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
-    NgbModule
+    NgbModule,
+    ModalModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -140,7 +140,7 @@
                           [(ngModel)]='user.senha'>
                       </div>
                       <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+                        <button type="button" class="btn btn-success" (click)='cadastrarCad()'>Cadastrar</button>
                       </div>
                     </div>
                   </div>
@@ -212,7 +212,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha"
                           [(ngModel)]='userLogin.senha'>
                         <a class="" href="#">Esqueceu a senha?</a> <br>
-                        <a class="  " href="#" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
+                        <a class="  " href="#" data-toggle="modal" data-target="#modalCadastro" (click)='cadastrar()'>Cadastre-se</a>
                       </div>
                       <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-success w-28 " (click)='entrar()'>Entrar</button>
@@ -229,15 +229,15 @@
 
         <!-- final modal login-->
 
+        <div *ngIf='auth.btnSair()'>
+          <li class="nav-item fontSair">
+            <a class="nav-link" (click)='sair()'>Sair</a>
+          </li>
+        </div>
         <li class="nav-item tirar ">
           <a class="nav-link ">|</a>
         </li>
 
-        <div *ngIf='auth.btnSair()'>
-          <li class="nav-item">
-            <a class="nav-link" (click)='sair()'>Sair</a>
-          </li>
-        </div>
         <li class="nav-item">
           <a class="nav-link p-1 ml-1" href="#"><img src="https://www.flaticon.com/svg/static/icons/svg/679/679814.svg"
               width="30px" height="30px" alt="carrinho"> </a>
