@@ -4,11 +4,11 @@ import { UserLogin } from '../model/UserLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { User } from './../model/User';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 
-declare var jQuery:any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-navbar',
@@ -16,12 +16,9 @@ declare var jQuery:any;
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
+
   userLogin: UserLogin = new UserLogin()
- 
-
   model: NgbDateStruct;
-
   user: User = new User()
   senha: string
 
@@ -33,7 +30,7 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  } 
+  }
 
   sair() {
     localStorage.clear()
@@ -53,24 +50,29 @@ export class NavbarComponent implements OnInit {
 
   cadastrar() {
     jQuery('#modalLogin').modal('hide');
-    this.router.navigate(['/cadastro'])
   }
 
-  cadastrar(){
-    if (this.senha === this.user.senha) {
+  cadastrarCad() {
+
+
+    if (this.user.nome == null || this.user.cpf == null || this.user.telefone == null ||
+      this.user.dataNascimento == null || this.user.email == null || this.user.senha == null) {
+      this.alert.showAlertDanger('Preencha todos os campos!')
+    }
+
+    else if (this.senha === this.user.senha) {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
-        this.router.navigate(['/login'])
-        alert('Usuário cadastrado com sucesso')
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso')
       })
 
     } else {
-      alert('Suas Senhas Não Conferem')
+      this.alert.showAlertDanger('Suas senhas não conferem')
     }
-   
+
   }
 
-  conferirSenha(event:any){
+  conferirSenha(event: any) {
     this.senha = event.target.value
   }
 
