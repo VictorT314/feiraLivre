@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogin } from '../model/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
       localStorage.setItem('token', this.userLogin.token)
+      this.alert.showAlertSuccess('Você foi logado com sucesso')
       this.router.navigate(['/home'])
     })
   }
