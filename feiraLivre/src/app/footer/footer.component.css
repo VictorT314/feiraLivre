@@ -4,3 +4,67 @@
 #bgfooter{
     background-color: #c6edb5;
 }
+
+.modalbg {
+    
+    background-color: #c6edb5;
+}
+
+
+.boxCadastro input[type="text"],
+.boxCadastro input[type="email"],
+.boxCadastro input[type="tel"],
+.boxCadastro input[type="name"],
+.textar {
+  border: 0;
+  background: white;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid green;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s
+}
+
+.boxCadastro h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500
+}
+
+.boxCadastro input[type="text"]:focus,
+.boxCadastro input[type="email"]:focus,
+.boxCadastro input[type="tel"]:focus,
+.boxCadastro input[type="name"]:focus
+{
+  width: 300px;
+  border-color: #2ecc71
+}
+.textar:focus {
+  width: 350px;
+  border-color: #2ecc71
+}
+
+.boxCadastro input[type="submit"]
+ {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer
+}
+
+.boxCadastro input[type="submit"]:hover,textar:hover {
+  background: #2ecc71
+}
