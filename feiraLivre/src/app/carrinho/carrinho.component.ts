@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Categoria } from '../model/Categoria';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrinhoComponent implements OnInit {
 
-  constructor() { }
+  total: number = 0
+  
+  constructor(
+    private produtoService: ProdutoService,
+    private route: ActivatedRoute
+    
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
+
+  
+
 
 }
