@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { STORAGE_KEYS } from '../config/storage_keys.config';
 import { Item } from '../model/Item';
+import { Pedido } from '../model/Pedido';
+import { Produto } from '../model/Produto';
 
 
 @Injectable({
@@ -10,30 +13,10 @@ import { Item } from '../model/Item';
 
 export class CarrinhoService {
 
-  constructor(private http: HttpClient) { }
+  
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')!)
-  }
-/*
-  getCarrinho() : Item {
-    let str = localStorage.getItem(STORAGE_KEYS.carrinho)
-    if (str != null){
-      return JSON.parse(str);
-    }
-    else{
-      return null;
-    }
-  }
+  constructor() { }
 
-  setCarrinho(obj : Item) {
-    if (obj != null) {
-      localStorage.setItem(STORAGE_KEYS.carrinho, JSON.stringify(obj));
-    }
-    else {
-      localStorage.removeItem(STORAGE_KEYS.carrinho)
-    }
-  }
-
-*/  
+  ngOnInit(): void {}
+  
 }

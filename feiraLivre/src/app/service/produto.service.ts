@@ -10,15 +10,21 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')!)
-  }
+  
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('http://localhost:8080/produto', this.token)
+    return this.http.get<Produto[]>('http://localhost:8080/produto')
+  }
+
+  getProdutosById(id: number): Observable<Produto>{
+    return this.http.get<Produto>(`http://localhost:8080/produto/titulo/${id}`)
+  }
+
+  getProdutosByNome(nome: string): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`http://localhost:8080/produto/titulo/${nome}`)
   }
 
   adicionarAoCarrinho(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/carrinho', produto, this.token)
+    return this.http.post<Produto>('http://localhost:8080/carrinho', produto)
   }
 }
