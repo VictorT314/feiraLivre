@@ -1,50 +1,184 @@
 <div class="container  mt-5 mb-5">
-    <div class="row mb-5">
+    <div class="row mb-0">
 
-        <div class="col-md-6 border fundo-pagamento">
+        <div class="col-md-12 border">
             <h2 class="text-center mt-4 mb-4">Seu carrinho</h2>
+            <div class="cart-item" *ngFor="let item of items">
+                <span>
+
+                    <img width="90" height="90" src="{{item.foto}}" alt="">
+                    <h5>{{ item.nome }}</h5>
+
+
+
+                </span>
+                <span>Qtd: {{ item.quantidade }}</span>
+                <span>{{ item.preco | currency: 'BRL' }}</span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end align-items-end">
+                    <button type="submit" class="btn btn-outline-success mt-3 mb-3" (click)="limparCarrinho()">Limpar
+                        carrinho</button>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-end align-self-end">
+                <label for="total">
+                    <h4> Subtotal: {{ totalCarrinho() | currency : 'BRL'}}</h4>
+                </label>
+            </div>
+
+
+
         </div>
 
-        <div class="col-md-6 border">
+
+
+    </div>
+
+    <fieldset [disabled]="isLoading">
+        <div class="row mt-0">
+            <div class="col-md-12 border">
+                <h2 class="text-center mt-4 mb-4">Endereço de entrega</h2>
+                <form>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="cep" class="font-weight-bold">CEP:</label>
+                                <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000"
+                                    [(ngModel)]="endereco.cep" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 d-flex align-items-center">
+                            <button class="btn btn-outline-success h-38" type="button" (click)="buscar()"
+                                [disabled]="isLoading">Buscar</button>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="logradouro" class="font-weight-bold">Logradouro:</label>
+                                <input type="text" class="form-control" id="logradouro" name="logradouro"
+                                    placeholder="Logradouro" [(ngModel)]="endereco.logradouro" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="numero" class="font-weight-bold">Número:</label>
+                                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número"
+                                    [(ngModel)]="endereco.numero" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="bairro" class="font-weight-bold">Bairro:</label>
+                                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro"
+                                    [(ngModel)]="endereco.bairro" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="localidade" class="font-weight-bold">Cidade:</label>
+                                <input type="text" class="form-control" id="localidade" name="localidade"
+                                    placeholder="Cidade" [(ngModel)]="endereco.localidade" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="uf" class="font-weight-bold">UF:</label>
+                                <input type="text" class="form-control" id="uf" name="uf" placeholder="UF"
+                                    [(ngModel)]="endereco.uf" />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="row">
+        <div class="col-md-12 border">
             <h2 class="text-center mt-4 mb-4">Pagamento</h2>
 
-            <form>
-                <div class="form-group">
-                    <label for="numeroCartao">Número do cartão</label>
-                    <input type="text" class="form-control" id="numeroCartao" placeholder="**** **** **** ****">
-                </div>
-                <div class="form-group">
-                    <label for="nomeCartao">Nome no cartão</label>
-                    <input type="text" class="form-control" id="nomecartao"
-                        placeholder="Digite o nome do titular do cartão">
-                </div>
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="vencimentoCartao">Vencimento</label>
-                        <input type="email" class="form-control" id="vencimentoCartao" placeholder="MM/AA">
+                        <label for="numeroCartao" class="font-weight-bold">Número do cartão</label>
+                        <input type="text" class="form-control" id="numeroCartao" placeholder="**** **** **** ****" mask="0000 0000 0000 0000"
+                            formControlName="numeroCartao">
                     </div>
+    
                     <div class="form-group col-md-6">
-                        <label for="ccv">CCV</label>
-                        <input type="password" class="form-control" id="ccv" placeholder="***">
+                        <label for="nomeCartao" class="font-weight-bold">Nome no cartão</label>
+                        <input class="form-control" type="text" id="nomeCartao"
+                            placeholder="Digite o nome do titular do cartão"  formControlName="nomeCartao">
                     </div>
                 </div>
-                <div class="form-group ">
-                    <label for="inputState">Opção de pagamento</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>À vista</option>
-                        <option>2X</option>
-                        <option>3X</option>
-                        <option>4X</option>
-                    </select>
-                </div>
-                <div class="d-flex justify-content-end align-self-end">
-                    <h4>Total: {{total | currency : 'BRL'}}</h4>
-                </div>
-        <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-outline-success mt-3 mb-3 d-flex justify-content-center w-50">Finalizar compra</button>
-        </div>
-    </form>
+                
 
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        <label for="vencimentoCartao" class="font-weight-bold">Vencimento</label>
+                        <input class="form-control" type="text" id="vencimentoCartao" placeholder="MM/AA" mask="00/00"
+                            formControlName="vencimentoCartao">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="ccv" class="font-weight-bold">CCV</label>
+                        <input class="form-control" type="password" id="ccv" placeholder="***" formControlName="ccv">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="parcelas" class="font-weight-bold">Opção de pagamento</label>
+                        <select id="parcelas" class="form-control" formControlName="parcelas">
+                            <option selected>À vista</option>
+                            <option>2X</option>
+                            <option>3X</option>
+                            <option>4X</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="d-flex justify-content-end align-self-end">
+                    <label for="total">
+                        <h4> Total: {{ totalCarrinho() | currency : 'BRL'}}</h4>
+                    </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success mt-3 mb-3 d-flex justify-content-center w-50"
+                        (click)="postPedido()">Finalizar compra</button>
+                </div>
+            </form>
+
+
+        </div>
     </div>
 </div>

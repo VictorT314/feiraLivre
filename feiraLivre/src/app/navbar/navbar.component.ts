@@ -5,6 +5,7 @@ import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { User } from './../model/User';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -42,6 +43,7 @@ export class NavbarComponent implements OnInit {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
       localStorage.setItem('token', this.userLogin.token)
+      localStorage.setItem('id', JSON.stringify(this.userLogin.id))
       jQuery('#modalLogin').modal('hide');
       this.alert.showAlertSuccess('Você foi logado!')
       this.router.navigate(['/home'])

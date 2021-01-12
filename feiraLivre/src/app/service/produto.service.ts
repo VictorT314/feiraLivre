@@ -24,7 +24,4 @@ export class ProdutoService {
     return this.http.get<Produto[]>(`http://localhost:8080/produto/titulo/${nome}`)
   }
 
-  adicionarAoCarrinho(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/carrinho', produto)
-  }
 }
