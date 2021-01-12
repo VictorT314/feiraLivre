@@ -1,22 +1,34 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { STORAGE_KEYS } from '../config/storage_keys.config';
-import { Item } from '../model/Item';
-import { Pedido } from '../model/Pedido';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
-
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class CarrinhoService {
 
+  items = []
   
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+  }
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {}
-  
+  addToCart(product) {
+    this.items.push(product);
+  }
+
+  getItems() {
+    return this.items;
+  }
+
+  clearCart() {
+    this.items = [];
+    return this.items;
+  }
+
 }

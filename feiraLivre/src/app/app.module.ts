@@ -2,7 +2,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,10 +16,11 @@ import { ContatosComponent } from './contatos/contatos.component';
 import { PoliticasComponent } from './politicas/politicas.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProdutosComponent } from './produtos/produtos.component';
-import { FiltroComponent } from './filtro/filtro.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertasComponent } from './alertas/alertas.component';
+import { RouterModule } from '@angular/router';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { EnderecoService } from './service/endereco.service'
 
 @NgModule({
   declarations: [
@@ -30,22 +32,32 @@ import { AlertasComponent } from './alertas/alertas.component';
     ContatosComponent,
     PoliticasComponent,
     ProdutosComponent,
-    FiltroComponent,
-    CarrinhoComponent,
-    AlertasComponent
+    AlertasComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'home', component: HomeComponent },
+      { path: 'sobre-nos', component: SobreNosComponent },
+      { path: 'contatos', component: ContatosComponent },
+      { path: 'catalogo', component: ProdutosComponent },
+      { path: 'catalogo/:produtoId', component: ProdutosComponent },
+      { path: 'politicas', component: PoliticasComponent },
+      { path: 'carrinho', component: CarrinhoComponent },
+    ]),
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
     NgbModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [EnderecoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
